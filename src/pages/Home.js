@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import cat from "../assets/images/bg/bg_cat.jpg";
 
 const HomeWrapper = styled.div``;
 
@@ -14,6 +15,7 @@ const Home = () => {
     <HomeWrapper>
       <HomeInner>
         <div>Home</div>
+        <img src={cat} alt="cat" />
       </HomeInner>
     </HomeWrapper>
   );
