@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from 'styled-components';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import MainLayout from './layouts/MainLayout';
 import "./styles/main.scss";
 import Home from "./pages/Home";
@@ -20,12 +20,12 @@ const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Router>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<MainLayout><Home /></MainLayout>} />
           <Route path="/about" element={<MainLayout><About /></MainLayout>} />
         </Routes>
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   );
 };
