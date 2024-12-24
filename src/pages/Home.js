@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import cat from "../assets/images/bg/bg_cat.jpg";
+import { Link } from "react-router-dom";
 
 const HomeWrapper = styled.div``;
 
@@ -14,8 +14,7 @@ const Home = () => {
   return (
     <HomeWrapper>
       <HomeInner>
-        <div>Home</div>
-        <img src={cat} alt="cat" />
+        <Link to="/product">상품 보기</Link>
       </HomeInner>
     </HomeWrapper>
   );

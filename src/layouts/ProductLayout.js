@@ -11,6 +11,8 @@ const LayoutWrapper = styled.div`
 `;
 
 const MainWrapper = styled.div`
+  display: flex;
+  gap: 3rem;
   flex: 1;
   margin: 0 auto;
   padding: 30px 20px;
@@ -18,12 +20,20 @@ const MainWrapper = styled.div`
   width: 100%;
 `;
 
+const MainContent = styled.div`
+  flex: 1;
+`;
+
 const MainLayout = ({ children }) => {
   return (
     <LayoutWrapper>
       <Header />
         <MainWrapper>
+          <Sidebar />
+
+          <MainContent>
             {children}
+          </MainContent>
         </MainWrapper>
       <Footer />
     </LayoutWrapper>

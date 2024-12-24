@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { BiSolidSun, BiSolidUser } from "react-icons/bi";
+import { BiSearch, BiHeart, BiShoppingBag, BiSun, BiUser } from "react-icons/bi";
 
 const HeaderWrapper = styled.header`
   height: 100px;
@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
 
 const HeaderInner = styled.div`
   display: grid;
-  grid-template-columns: min-content 1fr min-content;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   margin: 0 auto;
   padding: 0 20px;
@@ -18,32 +18,30 @@ const HeaderInner = styled.div`
   height: 100%;
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   font-size: 1rem;
   font-weight: bold;
 `;
 
-const Navigation = styled.nav`
+const Search = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 400px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 30px;
 `;
 
-const NavList = styled.ul`
-  display: flex;
-`;
-
-const NavItem = styled.li`
-  margin-right: 15px;
-`;
-
-const NavLink = styled(Link)`
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
-  }
+const SearchInput = styled.input`
+  width: 100%;
+  height: 100%;
 `;
 
 const Utillity = styled.div`
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
 `;
@@ -52,28 +50,28 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderInner>
-        <Logo>
-          <h1>Toy Project</h1>
-        </Logo>
+        <Logo to="/">Toy Project</Logo>
 
-        <Navigation>
-          <NavList>
-            <NavItem>
-              <NavLink to="/">Home</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/about">About</NavLink>
-            </NavItem>
-          </NavList>
-        </Navigation>
+        <Search>
+          <SearchInput placeholder="원하시는 상품을 입력해 주세요." />
+          <BiSearch />
+        </Search>
 
         <Utillity>
           <button type="button">
-            <BiSolidSun />
+            <BiHeart  />
           </button>
 
           <button type="button">
-            <BiSolidUser />
+            <BiShoppingBag />
+          </button>
+
+          <button type="button">
+            <BiUser />
+          </button>
+
+          <button type="button">
+            <BiSun />
           </button>
         </Utillity>
       </HeaderInner>
