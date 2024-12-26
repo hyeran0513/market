@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import blackShirt from "../assets/images/bg/bg_black_shirt.jpg";
 import Card from "../components/Card";
 import { FcComboChart } from "react-icons/fc";
-import { db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import catImage from "../assets/images/bg/bg_cat.jpg";
 
 const HomeWrapper = styled.div``;
 
@@ -55,29 +54,15 @@ const SectionTitle = styled.p`
 `;
 
 const Home = () => {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "products"));
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setItems(data);
-      } catch (error) {
-        console.error("에러:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  // 타임스탬프를 날짜 형식으로 변환
-  const formatDate = (timestamp) => {
-    if (!timestamp) return "";
-
-    const date = new Date(timestamp.seconds * 1000);
-    return date.toLocaleString();
-  };
+  const items = [
+    {
+    productId: "p12345",
+    productName: "테스트",
+    productPrice: "5000",
+    arrivalDate: "2024.12.27",
+    thumbnail: catImage
+    }
+  ];
 
   return (
     <HomeWrapper>
@@ -103,7 +88,7 @@ const Home = () => {
                   key={item.productId}
                   productName={item.productName}
                   productPrice={item.productPrice}
-                  productArrivalDate={formatDate(item.arrivalDate)}
+                  productArrivalDate={item.arrivalDate}
                   thumbnail={item.thumbnail}
                   productId={item.productId}
                 />
