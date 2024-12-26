@@ -28,7 +28,7 @@ const Product = () => {
   const items = [
     {
     productId: "p12345",
-    productName: "테스트",
+    productName: "테스트 firebase 제거 확인용",
     productPrice: "5000",
     arrivalDate: "2024.12.27",
     thumbnail: catImage
