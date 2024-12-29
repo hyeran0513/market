@@ -8,6 +8,7 @@ const FooterWrapper = styled.div`
 
 const FooterInner = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
   padding: 0 20px;
@@ -18,7 +19,7 @@ const FooterInner = styled.div`
 const Footer = () => {
   return (
     <FooterWrapper>
-      <FooterInner>Footer</FooterInner>
+      <FooterInner>ⓒ 2024. kimhyeran. All rights reserved.</FooterInner>
     </FooterWrapper>
   );
 };

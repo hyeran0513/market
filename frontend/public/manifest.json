@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "옷 쇼핑몰",
+  "name": "옷 쇼핑몰",
   "icons": [
     {
       "src": "favicon.ico",

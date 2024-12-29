@@ -2,7 +2,6 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
-import ProductLayout from "./layouts/ProductLayout";
 import "./assets/styles/main.scss";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -37,9 +36,9 @@ const App = () => {
           <Route
             path="/product"
             element={
-              <ProductLayout>
+              <MainLayout>
                 <Product />
-              </ProductLayout>
+              </MainLayout>
             }
           />
           <Route

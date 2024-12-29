@@ -29,7 +29,7 @@ const SearchUtility = styled.div`
 const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
 `;
 
 const Product = () => {
